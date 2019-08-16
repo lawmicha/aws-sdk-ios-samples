@@ -28,12 +28,19 @@ class DownloadViewController: UIViewController{
         AWSS3TransferUtility.default()
     }()
 
+    var awss3StoragePlugin: AWSS3StoragePlugin?
+    var refStorageGetOperation: StorageGetOperation?
+    var unsubscribeGetOperation: Unsubscribe?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        print("DownloadViewController viewDidLoad")
         self.progressView.progress = 0.0;
         self.statusLabel.text = "Ready"
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        awss3StoragePlugin = appDelegate.awss3StoragePlugin
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,41 +66,75 @@ class DownloadViewController: UIViewController{
             })
         }
 
-        self.completionHandler = { (task, location, data, error) -> Void in
-            DispatchQueue.main.async(execute: {
-                if let error = error {
-                    NSLog("Failed with error: \(error)")
-                    self.statusLabel.text = "Failed"
-                }
-                else if(self.progressView.progress != 1.0) {
-                    self.statusLabel.text = "Failed"
-                }
-                else{
-                    self.statusLabel.text = "Success"
-                    self.imageView.image = UIImage(data: data!)
-                }
-            })
-        }
-
-        transferUtility.downloadData(
-            forKey: S3DownloadKeyName,
-            expression: expression,
-            completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
-                if let error = task.error {
-                    NSLog("Error: %@",error.localizedDescription);
-                    DispatchQueue.main.async(execute: {
+//        self.completionHandler = { (task, location, data, error) -> Void in
+//            DispatchQueue.main.async(execute: {
+//                if let error = error {
+//                    NSLog("Failed with error: \(error)")
+//                    self.statusLabel.text = "Failed"
+//                }
+//                else if(self.progressView.progress != 1.0) {
+//                    self.statusLabel.text = "Failed"
+//                }
+//                else{
+//                    self.statusLabel.text = "Success"
+//                    self.imageView.image = UIImage(data: data!)
+//                }
+//            })
+//        }
+        
+        self.refStorageGetOperation = self.awss3StoragePlugin?.get(key: S3DownloadKeyName, options: nil)
+        self.unsubscribeGetOperation = self.refStorageGetOperation?.subscribe({ (event) in
+            switch(event) {
+            case .unknown:
+                break;
+            case .notInProcess:
+                break;
+            case .inProcess(let progress):
+                print("[Subscription] progress is \(progress.fractionCompleted)")
+                DispatchQueue.main.async(execute: {
+                    if (self.progressView.progress < Float(progress.fractionCompleted)) {
+                        self.progressView.progress = Float(progress.fractionCompleted)
+                    }
+                })
+                break;
+            case .completed(let result):
+                print("[Subscription] completed \(result)")
+                DispatchQueue.main.async(execute: {
+                    
+                    if(self.progressView.progress != 1.0) {
                         self.statusLabel.text = "Failed"
-                    })
-                }
-
-                if let _ = task.result {
-                    DispatchQueue.main.async(execute: {
-                        self.statusLabel.text = "Downloading..."
-                    })
-                    NSLog("Download Starting!")
-                    // Do something with uploadTask.
-                }
-                return nil;
+                    }
+                    else{
+                        self.statusLabel.text = "Success"
+                        self.imageView.image = UIImage(data: result.data)
+                    }
+                })
+                
+                self.unsubscribeGetOperation?()
+            case .failed(_):
+                break;
             }
+        })
+//
+//        transferUtility.downloadData(
+//            forKey: S3DownloadKeyName,
+//            expression: expression,
+//            completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
+//                if let error = task.error {
+//                    NSLog("Error: %@",error.localizedDescription);
+//                    DispatchQueue.main.async(execute: {
+//                        self.statusLabel.text = "Failed"
+//                    })
+//                }
+//
+//                if let _ = task.result {
+//                    DispatchQueue.main.async(execute: {
+//                        self.statusLabel.text = "Downloading..."
+//                    })
+//                    NSLog("Download Starting!")
+//                    // Do something with uploadTask.
+//                }
+//                return nil;
+//            }
     }
 }

@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,13 +40,43 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNi-0z-Hll">
+                                <rect key="frame" x="132" y="140" width="111" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="o9h-K1-jpN"/>
+                                </constraints>
+                                <state key="normal" title="cancelUpload"/>
+                                <connections>
+                                    <action selector="cancelUpload:" destination="9pv-A4-QxB" eventType="touchUpInside" id="G1d-KE-CTG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdz-Mf-qig">
+                                <rect key="frame" x="136" y="178" width="103" height="30"/>
+                                <state key="normal" title="uploadText"/>
+                                <connections>
+                                    <action selector="s3Upload:" destination="9pv-A4-QxB" eventType="touchUpInside" id="1UI-pj-BbY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7U-CE-vLi">
+                                <rect key="frame" x="117" y="216" width="140" height="30"/>
+                                <state key="normal" title="delete uploadedText"/>
+                                <connections>
+                                    <action selector="deleteS3Upload:" destination="9pv-A4-QxB" eventType="touchUpInside" id="xFM-UD-I1A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VEG-2J-CRx" firstAttribute="top" secondItem="JdB-Qi-jEc" secondAttribute="bottom" constant="20" id="16q-Oh-yi8"/>
+                            <constraint firstItem="wdz-Mf-qig" firstAttribute="top" secondItem="MNi-0z-Hll" secondAttribute="bottom" constant="8" symbolic="YES" id="7j4-tI-DOg"/>
+                            <constraint firstItem="b7U-CE-vLi" firstAttribute="centerX" secondItem="wdz-Mf-qig" secondAttribute="centerX" id="Fa3-3y-73h"/>
+                            <constraint firstItem="MNi-0z-Hll" firstAttribute="centerX" secondItem="VEG-2J-CRx" secondAttribute="centerX" id="Ifa-r6-0WC"/>
                             <constraint firstItem="JdB-Qi-jEc" firstAttribute="trailing" secondItem="VEG-2J-CRx" secondAttribute="trailing" id="JEi-vW-COx"/>
+                            <constraint firstItem="MNi-0z-Hll" firstAttribute="centerX" secondItem="wdz-Mf-qig" secondAttribute="centerX" id="MBn-mj-Q8T"/>
                             <constraint firstItem="ZLf-2r-dkP" firstAttribute="trailing" secondItem="JdB-Qi-jEc" secondAttribute="trailing" id="R1w-em-rsv"/>
+                            <constraint firstItem="b7U-CE-vLi" firstAttribute="top" secondItem="wdz-Mf-qig" secondAttribute="bottom" constant="8" symbolic="YES" id="Tzo-Sr-BhM"/>
                             <constraint firstItem="JdB-Qi-jEc" firstAttribute="top" secondItem="ZLf-2r-dkP" secondAttribute="bottom" constant="16" id="Xt3-Bp-iDB"/>
+                            <constraint firstItem="MNi-0z-Hll" firstAttribute="top" secondItem="VEG-2J-CRx" secondAttribute="bottom" constant="8" symbolic="YES" id="bey-O6-Oht"/>
                             <constraint firstItem="ZLf-2r-dkP" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="heQ-cM-GtR"/>
                             <constraint firstItem="ZLf-2r-dkP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="mWt-OY-Rv0"/>
                             <constraint firstItem="JdB-Qi-jEc" firstAttribute="leading" secondItem="VEG-2J-CRx" secondAttribute="leading" id="qW7-wP-xap"/>
@@ -57,7 +86,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="cancelButton" destination="MNi-0z-Hll" id="BCb-zc-u1l"/>
                         <outlet property="progressView" destination="JdB-Qi-jEc" id="lb6-L9-pt2"/>
+                        <outlet property="s3UploadButton" destination="wdz-Mf-qig" id="orF-S6-Dmy"/>
                         <outlet property="statusLabel" destination="VEG-2J-CRx" id="YdO-Ft-bjg"/>
                     </connections>
                 </viewController>
@@ -142,11 +173,73 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Zs7-82-h2a" kind="relationship" relationship="viewControllers" id="Wuh-tn-ei1"/>
+                        <segue destination="A62-bQ-pMy" kind="relationship" relationship="viewControllers" id="gnt-Wb-53U"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--List and Get URL-->
+        <scene sceneID="QaD-0L-WrG">
+            <objects>
+                <viewController id="Zs7-82-h2a" customClass="ListAndGetUrlViewController" customModule="S3TransferUtilitySampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Xi-vh-TBb"/>
+                        <viewControllerLayoutGuide type="bottom" id="A2H-hU-OoP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r1r-AV-DKj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gh-ZC-k3g">
+                                <rect key="frame" x="172.5" y="90" width="30" height="30"/>
+                                <state key="normal" title="list"/>
+                                <connections>
+                                    <action selector="listClicked:" destination="Zs7-82-h2a" eventType="touchUpInside" id="wB2-J6-3ES"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j98-pH-Xg2">
+                                <rect key="frame" x="149" y="128" width="76" height="30"/>
+                                <state key="normal" title="getUrl Test"/>
+                                <connections>
+                                    <action selector="getUrlTest:" destination="Zs7-82-h2a" eventType="touchUpInside" id="Rnt-jD-toe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j98-pH-Xg2" firstAttribute="top" secondItem="1Gh-ZC-k3g" secondAttribute="bottom" constant="8" symbolic="YES" id="5wE-FS-q1H"/>
+                            <constraint firstItem="j98-pH-Xg2" firstAttribute="centerX" secondItem="r1r-AV-DKj" secondAttribute="centerX" id="CqZ-QC-fhM"/>
+                            <constraint firstItem="1Gh-ZC-k3g" firstAttribute="top" secondItem="2Xi-vh-TBb" secondAttribute="bottom" constant="70" id="JtE-1D-WPP"/>
+                            <constraint firstItem="1Gh-ZC-k3g" firstAttribute="centerX" secondItem="r1r-AV-DKj" secondAttribute="centerX" id="qpU-Zn-Gy6"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="List and Get URL" id="Eaw-FN-eNJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxg-rM-VYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413.5999999999999" y="-321.58920539730138"/>
+        </scene>
+        <!--List and Remove-->
+        <scene sceneID="6wg-wy-luM">
+            <objects>
+                <viewController id="A62-bQ-pMy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QgU-UY-4ob"/>
+                        <viewControllerLayoutGuide type="bottom" id="fAE-AC-AEZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KVM-Fm-sxI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="List and Remove" id="vyc-dk-yqI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slt-m1-SzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="358"/>
         </scene>
     </scenes>
     <resources>

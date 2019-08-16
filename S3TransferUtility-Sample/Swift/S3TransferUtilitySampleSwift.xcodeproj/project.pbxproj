@@ -8,7 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		17480E031BC833D10022B2CF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17480E021BC833D10022B2CF /* Launch Screen.storyboard */; };
-		806CCAC421BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CCAC321BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.swift */; };
+		21265CA52301D291004CCE39 /* AWSS3StoragePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CA42301D291004CCE39 /* AWSS3StoragePlugin.swift */; };
+		21265CA72301D2DC004CCE39 /* StorageCategoryClientBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CA62301D2DC004CCE39 /* StorageCategoryClientBehavior.swift */; };
+		21265CAB2301DAAB004CCE39 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CAA2301DAAB004CCE39 /* Plugin.swift */; };
+		21265CAD2301DAFF004CCE39 /* StorageCategoryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CAC2301DAFF004CCE39 /* StorageCategoryPlugin.swift */; };
+		21265CAF2301DB57004CCE39 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CAE2301DB57004CCE39 /* CategoryType.swift */; };
+		21265CB423022955004CCE39 /* StorageCategoryClientBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CA62301D2DC004CCE39 /* StorageCategoryClientBehavior.swift */; };
+		21265CC123022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CC023022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.swift */; };
+		21265CC923032BB6004CCE39 /* AmplifyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CC823032BB6004CCE39 /* AmplifyOperation.swift */; };
+		21265CCB23033403004CCE39 /* AmplifyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CCA23033403004CCE39 /* AmplifyError.swift */; };
+		21265CCD230334DE004CCE39 /* AWSS3StoragePutOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CCC230334DE004CCE39 /* AWSS3StoragePutOperation.swift */; };
+		21265CCF23033500004CCE39 /* StoragePutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CCE23033500004CCE39 /* StoragePutResult.swift */; };
+		21265CD223033586004CCE39 /* StoragePutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CD123033586004CCE39 /* StoragePutError.swift */; };
+		21265CD42303385D004CCE39 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CD32303385D004CCE39 /* Cancellable.swift */; };
+		21265CD623033872004CCE39 /* Resumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CD523033872004CCE39 /* Resumable.swift */; };
+		21265CD823033C7D004CCE39 /* HubPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CD723033C7D004CCE39 /* HubPayload.swift */; };
+		21265CDC23035F53004CCE39 /* AsyncEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CDB23035F53004CCE39 /* AsyncEvent.swift */; };
+		21265CDE23035F8A004CCE39 /* EventPublishable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CDD23035F8A004CCE39 /* EventPublishable.swift */; };
+		21265CE02304A340004CCE39 /* StoragePutOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CDF2304A340004CCE39 /* StoragePutOperation.swift */; };
+		21265CE42304ADEB004CCE39 /* StorageGetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CE32304ADEB004CCE39 /* StorageGetOperation.swift */; };
+		21265CE62304AE1E004CCE39 /* StorageGetResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CE52304AE1E004CCE39 /* StorageGetResult.swift */; };
+		21265CE82304AE41004CCE39 /* StorageGetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CE72304AE41004CCE39 /* StorageGetError.swift */; };
+		21265CEA2304AEC4004CCE39 /* AWSS3StorageGetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CE92304AEC4004CCE39 /* AWSS3StorageGetOperation.swift */; };
+		21265CEC2304BE5D004CCE39 /* AWSS3StorageRemoveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CEB2304BE5D004CCE39 /* AWSS3StorageRemoveOperation.swift */; };
+		21265CEE2304BEC2004CCE39 /* StorageRemoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CED2304BEC2004CCE39 /* StorageRemoveResult.swift */; };
+		21265CF02304BEDB004CCE39 /* StorageRemoveError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CEF2304BEDB004CCE39 /* StorageRemoveError.swift */; };
+		21265CF22304BF1B004CCE39 /* StorageRemoveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CF12304BF1B004CCE39 /* StorageRemoveOperation.swift */; };
+		21265CF42304BFCF004CCE39 /* AWSS3StorageListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CF32304BFCF004CCE39 /* AWSS3StorageListOperation.swift */; };
+		21265CF62304C04B004CCE39 /* StorageListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CF52304C04B004CCE39 /* StorageListResult.swift */; };
+		21265CF82304C059004CCE39 /* StorageListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CF72304C059004CCE39 /* StorageListError.swift */; };
+		21265CFA2304C092004CCE39 /* StorageListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265CF92304C092004CCE39 /* StorageListOperation.swift */; };
+		21265D082304C63E004CCE39 /* ListAndGetUrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D072304C63E004CCE39 /* ListAndGetUrlViewController.swift */; };
+		21265D0B2304CFF0004CCE39 /* AWSS3StorageGetUrlOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D0A2304CFF0004CCE39 /* AWSS3StorageGetUrlOperation.swift */; };
+		21265D0D2304CFFD004CCE39 /* StorageGetUrlResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D0C2304CFFD004CCE39 /* StorageGetUrlResult.swift */; };
+		21265D0F2304D023004CCE39 /* StorageGetUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D0E2304D023004CCE39 /* StorageGetUrlError.swift */; };
+		21265D112304D074004CCE39 /* StorageGetUrlOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D102304D074004CCE39 /* StorageGetUrlOperation.swift */; };
+		21265D51230637C7004CCE39 /* AWSS3StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D50230637C7004CCE39 /* AWSS3StorageError.swift */; };
 		8076715221C4876400D068E1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8076715121C4876300D068E1 /* awsconfiguration.json */; };
 		BDCC7EC119DE50AB008B2510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC7EC019DE50AB008B2510 /* AppDelegate.swift */; };
 		BDCC7EC319DE50AB008B2510 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC7EC219DE50AB008B2510 /* UploadViewController.swift */; };
@@ -20,6 +55,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		21265CC323022B90004CCE39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDCC7EB319DE50AB008B2510 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDCC7EBA19DE50AB008B2510;
+			remoteInfo = S3TransferUtilitySampleSwift;
+		};
 		806CCAC621BAFCF10083836F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BDCC7EB319DE50AB008B2510 /* Project object */;
@@ -33,6 +75,44 @@
 		0904D7574D2D8458D57AFA18 /* Pods-S3TransferUtilitySampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-S3TransferUtilitySampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-S3TransferUtilitySampleSwift/Pods-S3TransferUtilitySampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		17324510F844CFCA52567EFB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		17480E021BC833D10022B2CF /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		21265CA42301D291004CCE39 /* AWSS3StoragePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StoragePlugin.swift; sourceTree = "<group>"; };
+		21265CA62301D2DC004CCE39 /* StorageCategoryClientBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCategoryClientBehavior.swift; sourceTree = "<group>"; };
+		21265CAA2301DAAB004CCE39 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		21265CAC2301DAFF004CCE39 /* StorageCategoryPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCategoryPlugin.swift; sourceTree = "<group>"; };
+		21265CAE2301DB57004CCE39 /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
+		21265CB8230229FE004CCE39 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21265CBE23022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = S3TransferUtilitySampleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21265CC023022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3TransferUtilitySampleSwiftTests.swift; sourceTree = "<group>"; };
+		21265CC223022B90004CCE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21265CC823032BB6004CCE39 /* AmplifyOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplifyOperation.swift; sourceTree = "<group>"; };
+		21265CCA23033403004CCE39 /* AmplifyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplifyError.swift; sourceTree = "<group>"; };
+		21265CCC230334DE004CCE39 /* AWSS3StoragePutOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StoragePutOperation.swift; sourceTree = "<group>"; };
+		21265CCE23033500004CCE39 /* StoragePutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragePutResult.swift; sourceTree = "<group>"; };
+		21265CD123033586004CCE39 /* StoragePutError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragePutError.swift; sourceTree = "<group>"; };
+		21265CD32303385D004CCE39 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		21265CD523033872004CCE39 /* Resumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resumable.swift; sourceTree = "<group>"; };
+		21265CD723033C7D004CCE39 /* HubPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubPayload.swift; sourceTree = "<group>"; };
+		21265CDB23035F53004CCE39 /* AsyncEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncEvent.swift; sourceTree = "<group>"; };
+		21265CDD23035F8A004CCE39 /* EventPublishable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPublishable.swift; sourceTree = "<group>"; };
+		21265CDF2304A340004CCE39 /* StoragePutOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragePutOperation.swift; sourceTree = "<group>"; };
+		21265CE32304ADEB004CCE39 /* StorageGetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetOperation.swift; sourceTree = "<group>"; };
+		21265CE52304AE1E004CCE39 /* StorageGetResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetResult.swift; sourceTree = "<group>"; };
+		21265CE72304AE41004CCE39 /* StorageGetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetError.swift; sourceTree = "<group>"; };
+		21265CE92304AEC4004CCE39 /* AWSS3StorageGetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StorageGetOperation.swift; sourceTree = "<group>"; };
+		21265CEB2304BE5D004CCE39 /* AWSS3StorageRemoveOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StorageRemoveOperation.swift; sourceTree = "<group>"; };
+		21265CED2304BEC2004CCE39 /* StorageRemoveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoveResult.swift; sourceTree = "<group>"; };
+		21265CEF2304BEDB004CCE39 /* StorageRemoveError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoveError.swift; sourceTree = "<group>"; };
+		21265CF12304BF1B004CCE39 /* StorageRemoveOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRemoveOperation.swift; sourceTree = "<group>"; };
+		21265CF32304BFCF004CCE39 /* AWSS3StorageListOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StorageListOperation.swift; sourceTree = "<group>"; };
+		21265CF52304C04B004CCE39 /* StorageListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageListResult.swift; sourceTree = "<group>"; };
+		21265CF72304C059004CCE39 /* StorageListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageListError.swift; sourceTree = "<group>"; };
+		21265CF92304C092004CCE39 /* StorageListOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageListOperation.swift; sourceTree = "<group>"; };
+		21265D072304C63E004CCE39 /* ListAndGetUrlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAndGetUrlViewController.swift; sourceTree = "<group>"; };
+		21265D0A2304CFF0004CCE39 /* AWSS3StorageGetUrlOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StorageGetUrlOperation.swift; sourceTree = "<group>"; };
+		21265D0C2304CFFD004CCE39 /* StorageGetUrlResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetUrlResult.swift; sourceTree = "<group>"; };
+		21265D0E2304D023004CCE39 /* StorageGetUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetUrlError.swift; sourceTree = "<group>"; };
+		21265D102304D074004CCE39 /* StorageGetUrlOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetUrlOperation.swift; sourceTree = "<group>"; };
+		21265D50230637C7004CCE39 /* AWSS3StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StorageError.swift; sourceTree = "<group>"; };
 		249182B875FFD644D3950992 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		806CCAC121BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = S3TransferUtilitySampleSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		806CCAC321BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3TransferUtilitySampleSwiftUITests.swift; sourceTree = "<group>"; };
@@ -51,6 +131,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		21265CBB23022B90004CCE39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		806CCABE21BAFCF10083836F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +156,128 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21265CBF23022B90004CCE39 /* S3TransferUtilitySampleSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				21265CC023022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.swift */,
+				21265CC223022B90004CCE39 /* Info.plist */,
+			);
+			path = S3TransferUtilitySampleSwiftTests;
+			sourceTree = "<group>";
+		};
+		21265CD023033522004CCE39 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				21265CFD2304C0F7004CCE39 /* Operation */,
+				21265CFE2304C122004CCE39 /* Support */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		21265CFD2304C0F7004CCE39 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				21265CC823032BB6004CCE39 /* AmplifyOperation.swift */,
+				21265CE32304ADEB004CCE39 /* StorageGetOperation.swift */,
+				21265D102304D074004CCE39 /* StorageGetUrlOperation.swift */,
+				21265CDF2304A340004CCE39 /* StoragePutOperation.swift */,
+				21265CF12304BF1B004CCE39 /* StorageRemoveOperation.swift */,
+				21265CF92304C092004CCE39 /* StorageListOperation.swift */,
+			);
+			name = Operation;
+			sourceTree = "<group>";
+		};
+		21265CFE2304C122004CCE39 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				21265CDB23035F53004CCE39 /* AsyncEvent.swift */,
+				21265CCA23033403004CCE39 /* AmplifyError.swift */,
+				21265CDD23035F8A004CCE39 /* EventPublishable.swift */,
+				21265CAE2301DB57004CCE39 /* CategoryType.swift */,
+				21265CAA2301DAAB004CCE39 /* Plugin.swift */,
+				21265CD32303385D004CCE39 /* Cancellable.swift */,
+				21265CD523033872004CCE39 /* Resumable.swift */,
+				21265CD723033C7D004CCE39 /* HubPayload.swift */,
+				21265CAC2301DAFF004CCE39 /* StorageCategoryPlugin.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		21265CFF2304C1F7004CCE39 /* Put */ = {
+			isa = PBXGroup;
+			children = (
+				21265CCC230334DE004CCE39 /* AWSS3StoragePutOperation.swift */,
+				21265CD123033586004CCE39 /* StoragePutError.swift */,
+				21265CCE23033500004CCE39 /* StoragePutResult.swift */,
+			);
+			name = Put;
+			sourceTree = "<group>";
+		};
+		21265D002304C201004CCE39 /* Get */ = {
+			isa = PBXGroup;
+			children = (
+				21265CE92304AEC4004CCE39 /* AWSS3StorageGetOperation.swift */,
+				21265CE52304AE1E004CCE39 /* StorageGetResult.swift */,
+				21265CE72304AE41004CCE39 /* StorageGetError.swift */,
+			);
+			name = Get;
+			sourceTree = "<group>";
+		};
+		21265D012304C209004CCE39 /* Remove */ = {
+			isa = PBXGroup;
+			children = (
+				21265CEB2304BE5D004CCE39 /* AWSS3StorageRemoveOperation.swift */,
+				21265CED2304BEC2004CCE39 /* StorageRemoveResult.swift */,
+				21265CEF2304BEDB004CCE39 /* StorageRemoveError.swift */,
+			);
+			name = Remove;
+			sourceTree = "<group>";
+		};
+		21265D022304C210004CCE39 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				21265CF32304BFCF004CCE39 /* AWSS3StorageListOperation.swift */,
+				21265CF52304C04B004CCE39 /* StorageListResult.swift */,
+				21265CF72304C059004CCE39 /* StorageListError.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		21265D032304C505004CCE39 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDCC7EC219DE50AB008B2510 /* UploadViewController.swift */,
+				BDCC7EC419DE50AB008B2510 /* DownloadViewController.swift */,
+				21265D072304C63E004CCE39 /* ListAndGetUrlViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		21265D042304C514004CCE39 /* StorageAPI */ = {
+			isa = PBXGroup;
+			children = (
+				21265CA62301D2DC004CCE39 /* StorageCategoryClientBehavior.swift */,
+				21265CA42301D291004CCE39 /* AWSS3StoragePlugin.swift */,
+				21265D50230637C7004CCE39 /* AWSS3StorageError.swift */,
+				21265D002304C201004CCE39 /* Get */,
+				21265D092304CFD6004CCE39 /* GetUrl */,
+				21265CFF2304C1F7004CCE39 /* Put */,
+				21265D012304C209004CCE39 /* Remove */,
+				21265D022304C210004CCE39 /* List */,
+			);
+			name = StorageAPI;
+			sourceTree = "<group>";
+		};
+		21265D092304CFD6004CCE39 /* GetUrl */ = {
+			isa = PBXGroup;
+			children = (
+				21265D0A2304CFF0004CCE39 /* AWSS3StorageGetUrlOperation.swift */,
+				21265D0C2304CFFD004CCE39 /* StorageGetUrlResult.swift */,
+				21265D0E2304D023004CCE39 /* StorageGetUrlError.swift */,
+			);
+			name = GetUrl;
+			sourceTree = "<group>";
+		};
 		6A1630B205B314CA6C9BF279 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +304,7 @@
 				8076715121C4876300D068E1 /* awsconfiguration.json */,
 				BDCC7EBD19DE50AB008B2510 /* S3BackgroundTransferSampleSwift */,
 				806CCAC221BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests */,
+				21265CBF23022B90004CCE39 /* S3TransferUtilitySampleSwiftTests */,
 				BDCC7EBC19DE50AB008B2510 /* Products */,
 				C4286EAEE5FD4C7B9D5976C9 /* Frameworks */,
 				6A1630B205B314CA6C9BF279 /* Pods */,
@@ -106,6 +316,7 @@
 			children = (
 				BDCC7EBB19DE50AB008B2510 /* S3TransferUtilitySampleSwift.app */,
 				806CCAC121BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.xctest */,
+				21265CBE23022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,14 +324,15 @@
 		BDCC7EBD19DE50AB008B2510 /* S3BackgroundTransferSampleSwift */ = {
 			isa = PBXGroup;
 			children = (
-				BDCC7EE519DE5F09008B2510 /* Constants.swift */,
-				BDCC7EC019DE50AB008B2510 /* AppDelegate.swift */,
-				BDCC7EC219DE50AB008B2510 /* UploadViewController.swift */,
-				BDCC7EC419DE50AB008B2510 /* DownloadViewController.swift */,
-				BDCC7EC619DE50AB008B2510 /* Main.storyboard */,
-				BDCC7EC919DE50AB008B2510 /* Images.xcassets */,
 				BDCC7EBE19DE50AB008B2510 /* Supporting Files */,
+				BDCC7EC919DE50AB008B2510 /* Images.xcassets */,
 				17480E021BC833D10022B2CF /* Launch Screen.storyboard */,
+				BDCC7EE519DE5F09008B2510 /* Constants.swift */,
+				BDCC7EC619DE50AB008B2510 /* Main.storyboard */,
+				BDCC7EC019DE50AB008B2510 /* AppDelegate.swift */,
+				21265D032304C505004CCE39 /* ViewControllers */,
+				21265D042304C514004CCE39 /* StorageAPI */,
+				21265CD023033522004CCE39 /* Protocols */,
 			);
 			path = S3BackgroundTransferSampleSwift;
 			sourceTree = "<group>";
@@ -136,6 +348,7 @@
 		C4286EAEE5FD4C7B9D5976C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21265CB8230229FE004CCE39 /* AWSCore.framework */,
 				DB7448429987CC77DCB71A7C /* Pods_S3TransferUtilitySampleSwift.framework */,
 			);
 			name = Frameworks;
@@ -144,6 +357,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		21265CBD23022B90004CCE39 /* S3TransferUtilitySampleSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21265CC523022B90004CCE39 /* Build configuration list for PBXNativeTarget "S3TransferUtilitySampleSwiftTests" */;
+			buildPhases = (
+				21265CBA23022B90004CCE39 /* Sources */,
+				21265CBB23022B90004CCE39 /* Frameworks */,
+				21265CBC23022B90004CCE39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21265CC423022B90004CCE39 /* PBXTargetDependency */,
+			);
+			name = S3TransferUtilitySampleSwiftTests;
+			productName = S3TransferUtilitySampleSwiftTests;
+			productReference = 21265CBE23022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		806CCAC021BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 806CCACA21BAFCF10083836F /* Build configuration list for PBXNativeTarget "S3TransferUtilitySampleSwiftUITests" */;
@@ -189,10 +420,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Amazon;
 				TargetAttributes = {
+					21265CBD23022B90004CCE39 = {
+						CreatedOnToolsVersion = 10.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BDCC7EBA19DE50AB008B2510;
+					};
 					806CCAC021BAFCF10083836F = {
 						CreatedOnToolsVersion = 9.3.1;
 						LastSwiftMigration = 1020;
@@ -220,11 +456,19 @@
 			targets = (
 				BDCC7EBA19DE50AB008B2510 /* S3TransferUtilitySampleSwift */,
 				806CCAC021BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests */,
+				21265CBD23022B90004CCE39 /* S3TransferUtilitySampleSwiftTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		21265CBC23022B90004CCE39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		806CCABF21BAFCF10083836F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,11 +552,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		21265CBA23022B90004CCE39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21265CC123022B90004CCE39 /* S3TransferUtilitySampleSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		806CCABD21BAFCF10083836F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806CCAC421BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.swift in Sources */,
+				21265CB423022955004CCE39 /* StorageCategoryClientBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,16 +572,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21265CEE2304BEC2004CCE39 /* StorageRemoveResult.swift in Sources */,
+				21265CEA2304AEC4004CCE39 /* AWSS3StorageGetOperation.swift in Sources */,
+				21265CF42304BFCF004CCE39 /* AWSS3StorageListOperation.swift in Sources */,
+				21265CD42303385D004CCE39 /* Cancellable.swift in Sources */,
+				21265CEC2304BE5D004CCE39 /* AWSS3StorageRemoveOperation.swift in Sources */,
+				21265CC923032BB6004CCE39 /* AmplifyOperation.swift in Sources */,
+				21265CAD2301DAFF004CCE39 /* StorageCategoryPlugin.swift in Sources */,
+				21265D112304D074004CCE39 /* StorageGetUrlOperation.swift in Sources */,
+				21265D51230637C7004CCE39 /* AWSS3StorageError.swift in Sources */,
+				21265CCF23033500004CCE39 /* StoragePutResult.swift in Sources */,
+				21265CA52301D291004CCE39 /* AWSS3StoragePlugin.swift in Sources */,
 				BDCC7EC519DE50AB008B2510 /* DownloadViewController.swift in Sources */,
+				21265CDC23035F53004CCE39 /* AsyncEvent.swift in Sources */,
+				21265CAB2301DAAB004CCE39 /* Plugin.swift in Sources */,
 				BDCC7EC119DE50AB008B2510 /* AppDelegate.swift in Sources */,
+				21265CCB23033403004CCE39 /* AmplifyError.swift in Sources */,
+				21265CCD230334DE004CCE39 /* AWSS3StoragePutOperation.swift in Sources */,
+				21265CD623033872004CCE39 /* Resumable.swift in Sources */,
 				BDCC7EC319DE50AB008B2510 /* UploadViewController.swift in Sources */,
+				21265CE82304AE41004CCE39 /* StorageGetError.swift in Sources */,
+				21265CF02304BEDB004CCE39 /* StorageRemoveError.swift in Sources */,
+				21265CD223033586004CCE39 /* StoragePutError.swift in Sources */,
+				21265CF82304C059004CCE39 /* StorageListError.swift in Sources */,
+				21265D0F2304D023004CCE39 /* StorageGetUrlError.swift in Sources */,
+				21265CF62304C04B004CCE39 /* StorageListResult.swift in Sources */,
+				21265D0B2304CFF0004CCE39 /* AWSS3StorageGetUrlOperation.swift in Sources */,
+				21265D0D2304CFFD004CCE39 /* StorageGetUrlResult.swift in Sources */,
+				21265CE02304A340004CCE39 /* StoragePutOperation.swift in Sources */,
+				21265CFA2304C092004CCE39 /* StorageListOperation.swift in Sources */,
+				21265CD823033C7D004CCE39 /* HubPayload.swift in Sources */,
+				21265CA72301D2DC004CCE39 /* StorageCategoryClientBehavior.swift in Sources */,
 				BDCC7EE619DE5F09008B2510 /* Constants.swift in Sources */,
+				21265CDE23035F8A004CCE39 /* EventPublishable.swift in Sources */,
+				21265CE62304AE1E004CCE39 /* StorageGetResult.swift in Sources */,
+				21265D082304C63E004CCE39 /* ListAndGetUrlViewController.swift in Sources */,
+				21265CAF2301DB57004CCE39 /* CategoryType.swift in Sources */,
+				21265CE42304ADEB004CCE39 /* StorageGetOperation.swift in Sources */,
+				21265CF22304BF1B004CCE39 /* StorageRemoveOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		21265CC423022B90004CCE39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDCC7EBA19DE50AB008B2510 /* S3TransferUtilitySampleSwift */;
+			targetProxy = 21265CC323022B90004CCE39 /* PBXContainerItemProxy */;
+		};
 		806CCAC721BAFCF10083836F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BDCC7EBA19DE50AB008B2510 /* S3TransferUtilitySampleSwift */;
@@ -349,6 +640,61 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		21265CC623022B90004CCE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = S3TransferUtilitySampleSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lawmicha.S3TransferUtilitySampleSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/S3TransferUtilitySampleSwift.app/S3TransferUtilitySampleSwift";
+			};
+			name = Debug;
+		};
+		21265CC723022B90004CCE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = S3TransferUtilitySampleSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lawmicha.S3TransferUtilitySampleSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/S3TransferUtilitySampleSwift.app/S3TransferUtilitySampleSwift";
+			};
+			name = Release;
+		};
 		806CCAC821BAFCF10083836F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -391,6 +737,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = S3TransferUtilitySampleSwiftUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -527,6 +874,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = S3BackgroundTransferSampleSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -540,6 +888,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		21265CC523022B90004CCE39 /* Build configuration list for PBXNativeTarget "S3TransferUtilitySampleSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21265CC623022B90004CCE39 /* Debug */,
+				21265CC723022B90004CCE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		806CCACA21BAFCF10083836F /* Build configuration list for PBXNativeTarget "S3TransferUtilitySampleSwiftUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -20,7 +20,10 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var statusLabel: UILabel!
-
+    @IBOutlet var cancelButton: UIButton!
+    
+    @IBOutlet var s3UploadButton: UIButton!
+    
     @objc var completionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
     @objc var progressBlock: AWSS3TransferUtilityProgressBlock?
 
@@ -29,14 +32,33 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
     @objc lazy var transferUtility = {
         AWSS3TransferUtility.default()
     }()
+    
+    @objc lazy var s3 = {
+       AWSS3.default()
+    }()
+    
+    var awss3StoragePlugin: AWSS3StoragePlugin?
+    
+    var refUploadTask: AWSS3TransferUtilityUploadTask?
+    var refStoragePutOperation: StoragePutOperation?
+    var unsubscribePutOperation: Unsubscribe?
+    
+    var refStorageRemoveOperation: StorageRemoveOperation?
+    var unsubscribeRemoveOperation: Unsubscribe?
 
+    let S3UploadTextKeyName: String = "testingKey111"      // Name of file to be uploaded
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        print("UploadViewController viewDidLoad")
+        
+        
         self.progressView.progress = 0.0;
         self.statusLabel.text = "Ready"
         self.imagePicker.delegate = self
+        self.cancelButton.setTitle("Cancel Upload", for: .normal)
+        //self.cancelButton.isHidden = true
 
         self.progressBlock = {(task, progress) in
             DispatchQueue.main.async(execute: {
@@ -47,6 +69,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
         }
 
         self.completionHandler = { (task, error) -> Void in
+            
             DispatchQueue.main.async(execute: {
                 if let error = error {
                     print("Failed with error: \(error)")
@@ -61,6 +84,9 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
                 }
             })
         }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        awss3StoragePlugin = appDelegate.awss3StoragePlugin
     }
 
     @IBAction func selectAndUpload(_ sender: UIButton) {
@@ -70,6 +96,60 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
         present(imagePicker, animated: true, completion: nil)
     }
 
+    @IBAction func s3Upload(_ sender: Any) {
+        print("s3Upload Clicked")
+        var dataString = "1234567890"
+        for _ in 1...5 {
+            dataString += dataString
+        }
+        var testData = dataString.data(using: String.Encoding.utf8)!
+        self.refStoragePutOperation = self.awss3StoragePlugin?.put(key: S3UploadTextKeyName, data: testData, options: 1)
+        self.unsubscribePutOperation = self.refStoragePutOperation?.subscribe({ (event) in
+            switch(event) {
+            case .unknown:
+                break;
+            case .notInProcess:
+                break;
+            case .inProcess(let progress):
+                print("[Subscription] progress is \(progress.fractionCompleted)")
+            case .completed(let result):
+                print("[Subscription] completed \(result.key)")
+                self.unsubscribePutOperation?()
+            case .failed(_):
+                break;
+            @unknown default:
+                break;
+            }
+        })
+    }
+    
+    @IBAction func deleteS3Upload(_ sender: Any) {
+        print("deleting uploaded text")
+        
+        self.refStorageRemoveOperation = self.awss3StoragePlugin?.remove(key: S3UploadTextKeyName, options: nil)
+        self.unsubscribeRemoveOperation = self.refStorageRemoveOperation?.subscribe({ (event) in
+            switch(event) {
+            case .unknown:
+                break;
+            case .notInProcess:
+                break;
+            case .completed(let result):
+                print("[Subscription] completed \(result)")
+                self.unsubscribeRemoveOperation?()
+            case .failed(_):
+                break;
+            @unknown default:
+                break;
+            }
+        })
+    }
+    
+    @IBAction func cancelUpload(_ sender: UIButton) {
+        //refUploadTask?.cancel();
+        refStoragePutOperation?.cancel()
+        print("Cancelled")
+    }
+    
     @objc func uploadImage(with data: Data) {
         let expression = AWSS3TransferUtilityUploadExpression()
         expression.progressBlock = progressBlock
@@ -79,32 +159,52 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
             self.progressView.progress = 0
         })
 
-        transferUtility.uploadData(
-            data,
-            key: S3UploadKeyName,
-            contentType: "image/png",
-            expression: expression,
-            completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
-                if let error = task.error {
-                    print("Error: \(error.localizedDescription)")
-
-                    DispatchQueue.main.async {
-                        self.statusLabel.text = "Failed"
-                    }
-                }
-
-                if let _ = task.result {
-
-                    DispatchQueue.main.async {
-                        self.statusLabel.text = "Uploading..."
-                        print("Upload Starting!")
-                    }
-
-                    // Do something with uploadTask.
-                }
-
-                return nil;
-        }
+        self.refStoragePutOperation = self.awss3StoragePlugin?.put(key: S3UploadKeyName, data: data, options: 1)
+        self.unsubscribePutOperation = self.refStoragePutOperation?.subscribe({ (event) in
+            
+            switch (event) {
+            case .unknown:
+                print("[Subscription] unknown")
+            case .notInProcess:
+                print("[Subscription] not in process")
+            case .inProcess(let progress):
+                print("[Subscription] progress is \(progress.fractionCompleted)")
+            case .completed(let result):
+                print("[Subscription] completed \(result.key)")
+                self.unsubscribePutOperation?()
+            case .failed(_):
+                print("[Subscription] failed")
+            }
+        })
+        
+        
+//        transferUtility.uploadData(
+//            data,
+//            key: S3UploadKeyName,
+//            contentType: "image/png",
+//            expression: expression,
+//            completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
+//                if let error = task.error {
+//                    print("Error: \(error.localizedDescription)")
+//
+//                    DispatchQueue.main.async {
+//                        self.statusLabel.text = "Failed"
+//                    }
+//                }
+//
+//                if let uploadTask = task.result {
+//
+//                    DispatchQueue.main.async {
+//                        self.statusLabel.text = "Uploading..."
+//                        print("Upload Starting!")
+//                    }
+//
+//                    // Hold a reference to the uploadTask for pausing, resuming, canceling
+//                    self.refUploadTask = uploadTask;
+//                }
+//
+//                return nil;
+//        }
     }
 }
 
