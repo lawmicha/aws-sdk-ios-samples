@@ -44,6 +44,7 @@
 		21265D0F2304D023004CCE39 /* StorageGetUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D0E2304D023004CCE39 /* StorageGetUrlError.swift */; };
 		21265D112304D074004CCE39 /* StorageGetUrlOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D102304D074004CCE39 /* StorageGetUrlOperation.swift */; };
 		21265D51230637C7004CCE39 /* AWSS3StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21265D50230637C7004CCE39 /* AWSS3StorageError.swift */; };
+		21FFF9E4230F3DE0005878EA /* StorageGetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FFF9E3230F3DE0005878EA /* StorageGetOperation.swift */; };
 		8076715221C4876400D068E1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8076715121C4876300D068E1 /* awsconfiguration.json */; };
 		BDCC7EC119DE50AB008B2510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC7EC019DE50AB008B2510 /* AppDelegate.swift */; };
 		BDCC7EC319DE50AB008B2510 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC7EC219DE50AB008B2510 /* UploadViewController.swift */; };
@@ -113,6 +114,7 @@
 		21265D0E2304D023004CCE39 /* StorageGetUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetUrlError.swift; sourceTree = "<group>"; };
 		21265D102304D074004CCE39 /* StorageGetUrlOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetUrlOperation.swift; sourceTree = "<group>"; };
 		21265D50230637C7004CCE39 /* AWSS3StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3StorageError.swift; sourceTree = "<group>"; };
+		21FFF9E3230F3DE0005878EA /* StorageGetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGetOperation.swift; sourceTree = "<group>"; };
 		249182B875FFD644D3950992 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		806CCAC121BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = S3TransferUtilitySampleSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		806CCAC321BAFCF10083836F /* S3TransferUtilitySampleSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3TransferUtilitySampleSwiftUITests.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				21265CDF2304A340004CCE39 /* StoragePutOperation.swift */,
 				21265CF12304BF1B004CCE39 /* StorageRemoveOperation.swift */,
 				21265CF92304C092004CCE39 /* StorageListOperation.swift */,
+				21FFF9E3230F3DE0005878EA /* StorageGetOperation.swift */,
 			);
 			name = Operation;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				21265CF42304BFCF004CCE39 /* AWSS3StorageListOperation.swift in Sources */,
 				21265CD42303385D004CCE39 /* Cancellable.swift in Sources */,
 				21265CEC2304BE5D004CCE39 /* AWSS3StorageRemoveOperation.swift in Sources */,
+				21FFF9E4230F3DE0005878EA /* StorageGetOperation.swift in Sources */,
 				21265CC923032BB6004CCE39 /* AmplifyOperation.swift in Sources */,
 				21265CAD2301DAFF004CCE39 /* StorageCategoryPlugin.swift in Sources */,
 				21265D112304D074004CCE39 /* StorageGetUrlOperation.swift in Sources */,

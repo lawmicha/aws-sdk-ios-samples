@@ -20,6 +20,7 @@ public class AWSS3StoragePutOperation: AmplifyOperation<Progress, StoragePutResu
         
         self.data = data
         self.key = key
+        //super.init()
     }
     
     // implements Resumable

@@ -26,6 +26,18 @@ public class AmplifyOperation<InProcessType, CompletedType, ErrorType: AmplifyEr
     public func subscribe(_ onEvent: @escaping (AsyncEvent<InProcessType, CompletedType, ErrorType>) -> Void) -> Unsubscribe {
         return { () -> Void in return }
     }
+    
+    public var result: CompletedType
+    
+    public var error: ErrorType
+    
+    public func completionHandler(_ onComplete: @escaping (AsyncEvent<InProcessType, CompletedType, ErrorType>) -> Void) {
+        // check if operation has completed. by checking state is finished, or is executing, etc.
+        
+        // if operation has completed, then we simply trigger the onComplete with the AsyncEvent object for completion
+        //onComplete(AsyncEvent.completed(result))
+        //onComplete(AsyncEvent.failed(error))
+    }
 }
 
 extension AmplifyOperation: Cancellable {

@@ -51,6 +51,9 @@ public class AWSS3StorageListOperation: AmplifyOperation<Void, StorageListResult
             if let results = task.result {
                 self.emitSuccess(result: results)
                 //print("results: \(results)")
+                
+                // hold onto the result.
+                // mark it as finished.
             }
             
             return nil
